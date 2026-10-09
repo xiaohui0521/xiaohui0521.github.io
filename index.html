@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Xiaohui Deng — PhD researcher in Psychology at the University of Edinburgh.">
+  <title>Xiaohui Deng | Psychology</title>
+  <style>
+    :root {
+      --ink: #172232;
+      --muted: #647084;
+      --paper: #fbfaf7;
+      --surface: #ffffff;
+      --accent: #2f6573;
+      --accent-soft: #e7f0f1;
+      --line: #dde2e5;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      line-height: 1.7;
+    }
+
+    a { color: var(--accent); }
+    a:hover { color: #183f49; }
+
+    .wrap {
+      width: min(1080px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid rgba(221, 226, 229, .9);
+      background: rgba(251, 250, 247, .94);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      font-size: .92rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    main { padding-bottom: 72px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      gap: 72px;
+      align-items: center;
+      min-height: 600px;
+      padding: 82px 0 70px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--accent);
+      font-size: .77rem;
+      font-weight: 750;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--serif);
+      line-height: 1.2;
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      letter-spacing: -.04em;
+    }
+
+    .lead {
+      max-width: 700px;
+      margin: 0 0 18px;
+      color: #3e4a5a;
+      font-family: var(--serif);
+      font-size: clamp(1.12rem, 2vw, 1.35rem);
+      line-height: 1.65;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 42px;
+      padding: 8px 16px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--ink);
+      background: var(--surface);
+      font-size: .9rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .portrait-wrap {
+      position: relative;
+      width: 280px;
+      height: 340px;
+    }
+
+    .portrait-wrap::before {
+      position: absolute;
+      inset: 20px -18px -18px 20px;
+      border-radius: 140px 140px 26px 26px;
+      background: var(--accent-soft);
+      content: "";
+    }
+
+    .portrait {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border: 8px solid var(--surface);
+      border-radius: 140px 140px 26px 26px;
+      box-shadow: 0 18px 50px rgba(24, 47, 54, .12);
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    section {
+      padding: 70px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 64px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: -.02em;
+    }
+
+    .section-body p:first-child { margin-top: 0; }
+
+    .interests {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .tag {
+      padding: 7px 13px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #295762;
+      font-size: .86rem;
+      font-weight: 650;
+    }
+
+    .year-group + .year-group { margin-top: 42px; }
+
+    .year {
+      margin: 0 0 20px;
+      color: var(--accent);
+      font-family: var(--sans);
+      font-size: .82rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .publication {
+      padding: 0 0 25px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 25px;
+    }
+
+    .publication:last-child { margin-bottom: 0; }
+
+    .pub-title {
+      margin: 0 0 7px;
+      font-family: var(--serif);
+      font-size: 1.18rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .pub-meta {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .doi {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: .88rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    footer {
+      padding: 30px 0 42px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 680px); }
+      nav { align-items: flex-start; padding: 16px 0; }
+      .nav-links { justify-content: flex-end; gap: 12px 18px; }
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 44px;
+        min-height: auto;
+        padding: 62px 0;
+      }
+      .portrait-wrap {
+        grid-row: 1;
+        width: min(250px, 76vw);
+        height: 300px;
+      }
+      .section-grid { grid-template-columns: 1fr; gap: 28px; }
+      section { padding: 54px 0; }
+    }
+
+    @media (max-width: 480px) {
+      nav { display: block; }
+      .brand { display: block; margin-bottom: 10px; }
+      .nav-links { justify-content: flex-start; }
+      h1 { font-size: 3.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="wrap" aria-label="Main navigation">
+      <a class="brand" href="#top">Xiaohui Deng</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top" class="wrap">
+    <div class="hero">
+      <div>
+        <p class="eyebrow">Psychology · University of Edinburgh</p>
+        <h1>Xiaohui Deng</h1>
+        <p class="lead">
+          PhD researcher studying personality, individual differences, close relationships,
+          and the social contexts that shape well-being and behaviour.
+        </p>
+        <div class="links" aria-label="Academic profiles">
+          <a class="button" href="https://scholar.google.com/citations?user=m4pgjEsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="https://www.linkedin.com/in/xiaohui-deng-21041b226/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+      <div class="portrait-wrap">
+        <img class="portrait" src="profile.jpg" alt="Portrait of Xiaohui Deng">
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="section-grid">
+        <h2>About</h2>
+        <div class="section-body">
+          <p>
+            I am a PhD researcher in Psychology at the University of Edinburgh. My research
+            lies at the intersection of personality, individual differences, and close
+            relationships, with a broader interest in understanding how personal characteristics
+            and social contexts shape well-being and behaviour.
+          </p>
+          <p>
+            My work examines questions related to romantic relationships, happiness, inequality,
+            perceived scarcity, and digital behaviour. Methodologically, I work with longitudinal,
+            diary, cross-cultural, and large-scale survey data.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="section-grid">
+        <h2>Research</h2>
+        <div class="section-body">
+          <p>
+            I am interested in how psychological processes unfold across different social and
+            cultural contexts, and how individual experiences interact with broader economic and
+            societal conditions. My previous work has examined smartphone addiction and aggression,
+            moral emotions, marriage and happiness, social inequality, narcissism, belonging, and
+            perceived scarcity.
+          </p>
+          <div class="interests" aria-label="Research interests">
+            <span class="tag">Personality</span>
+            <span class="tag">Individual Differences</span>
+            <span class="tag">Close Relationships</span>
+            <span class="tag">Well-being</span>
+            <span class="tag">Digital Behaviour</span>
+            <span class="tag">Cross-cultural Psychology</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="section-grid">
+        <h2>Publications</h2>
+        <div>
+          <div class="year-group">
+            <h3 class="year">2026</h3>
+            <article class="publication">
+              <p class="pub-title">Narcissistic admiration and rivalry predict social belonging differently: Moderating role of individualism–collectivism</p>
+              <p class="pub-meta">Zheng, W., Zhao, Y., <strong>Deng, X.</strong>, Li, X., &amp; Liu, Z. <em>Personality and Individual Differences, 255</em>, 113694.</p>
+              <a class="doi" href="https://doi.org/10.1016/j.paid.2026.113694" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Wealth and welfare: Differentiating the roles of individual income and national economy in moderating the links between perceived scarcity, well-being and health</p>
+              <p class="pub-meta">Zheng, W., Liu, Z., Wang, X., &amp; <strong>Deng, X.</strong> <em>Scandinavian Journal of Psychology</em>.</p>
+              <a class="doi" href="https://doi.org/10.1111/sjop.70078" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+          </div>
+
+          <div class="year-group">
+            <h3 class="year">2025</h3>
+            <article class="publication">
+              <p class="pub-title">Does inequality really shape human character? Multilevel evidence from 39 societies</p>
+              <p class="pub-meta">Zheng, W., Weziak-Bialowolska, D., Zhao, Y., <strong>Deng, X.</strong>, &amp; Xi, J. <em>European Journal of Personality</em>.</p>
+              <a class="doi" href="https://doi.org/10.1177/08902070251383101" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+          </div>
+
+          <div class="year-group">
+            <h3 class="year">2023</h3>
+            <article class="publication">
+              <p class="pub-title">Is marriage the tomb of happiness? Evidence from CFPS tracking data based on a PSM-DID approach</p>
+              <p class="pub-meta"><strong>Deng, X.</strong>, &amp; Xiang, Y. <em>Journal of Psychological Science, 46</em>(3), 635–643.</p>
+              <a class="doi" href="https://doi.org/10.16719/j.cnki.1671-6981.20230316" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+            <article class="publication">
+              <p class="pub-title">How moral disgust affects aggression: The mediating roles of benign and malicious envy</p>
+              <p class="pub-meta">Xiang, Y., <strong>Deng, X.</strong>, &amp; Li, X. <em>Deviant Behavior, 45</em>(2), 192–203.</p>
+              <a class="doi" href="https://doi.org/10.1080/01639625.2023.2244114" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+            <article class="publication">
+              <p class="pub-title">Smartphone addiction and internalized and externalized aggression among adolescents: Evidence from longitudinal study and weekly diary study</p>
+              <p class="pub-meta"><strong>Deng, X.</strong>, Li, X., &amp; Xiang, Y. <em>Computers in Human Behavior, 150</em>, 107988.</p>
+              <a class="doi" href="https://doi.org/10.1016/j.chb.2023.107988" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Xiaohui Deng · Last updated October 2026</div>
+  </footer>
+</body>
+</html>

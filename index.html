@@ -105,7 +105,7 @@
     h1 {
       max-width: 680px;
       margin: 0 0 20px;
-      font-size: clamp(3rem, 7vw, 5.5rem);
+      font-size: clamp(2.75rem, 5.5vw, 4.6rem);
       letter-spacing: -.04em;
     }
 
@@ -123,6 +123,30 @@
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 28px;
+    }
+
+    .profile-facts {
+      display: grid;
+      gap: 11px;
+      margin: 26px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .profile-facts li {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: #344052;
+      font-family: var(--serif);
+      font-size: 1rem;
+    }
+
+    .profile-facts svg {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 19px;
+      color: var(--accent);
     }
 
     .button {
@@ -206,6 +230,50 @@
 
     .year-group + .year-group { margin-top: 42px; }
 
+    .news-list {
+      display: grid;
+      gap: 0;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      gap: 18px;
+      padding: 0 0 22px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+
+    .news-item:last-child { margin-bottom: 0; }
+
+    .news-date {
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 750;
+      letter-spacing: .08em;
+      line-height: 1.45;
+      text-transform: uppercase;
+    }
+
+    .news-title {
+      margin: 0 0 4px;
+      font-family: var(--serif);
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .news-title a { text-decoration-thickness: 1px; text-underline-offset: 3px; }
+
+    .news-place {
+      margin: 0;
+      color: var(--muted);
+      font-size: .92rem;
+    }
+
     .year {
       margin: 0 0 20px;
       color: var(--accent);
@@ -268,6 +336,7 @@
         height: 300px;
       }
       .section-grid { grid-template-columns: 1fr; gap: 28px; }
+      .news-item { grid-template-columns: 70px minmax(0, 1fr); }
       section { padding: 54px 0; }
     }
 
@@ -285,6 +354,7 @@
       <a class="brand" href="#top">Xiaohui Deng</a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#news">News</a>
         <a href="#research">Research</a>
         <a href="#publications">Publications</a>
       </div>
@@ -300,8 +370,23 @@
           PhD researcher studying personality, individual differences, close relationships,
           and the social contexts that shape well-being and behaviour.
         </p>
+        <ul class="profile-facts" aria-label="Professional information">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8.5 12 4l9 4.5-9 4.5-9-4.5Z"/><path d="M7 10.5V15c0 1.7 2.2 3 5 3s5-1.3 5-3v-4.5M20 10v6"/></svg>
+            <span>PhD Student</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            <span>Edinburgh, UK</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m3 9 9-5 9 5M5 10v8m4-8v8m6-8v8m4-8v8M3 20h18"/></svg>
+            <span>University of Edinburgh</span>
+          </li>
+        </ul>
         <div class="links" aria-label="Academic profiles">
           <a class="button" href="https://scholar.google.com/citations?user=m4pgjEsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="button" href="mailto:xiaohui.deng@ed.ac.uk">Email</a>
           <a class="button" href="https://www.linkedin.com/in/xiaohui-deng-21041b226/" target="_blank" rel="noopener">LinkedIn</a>
         </div>
       </div>
@@ -321,6 +406,35 @@
             and social contexts shape well-being and behaviour.
           </p>
         </div>
+      </div>
+    </section>
+
+    <section id="news">
+      <div class="section-grid">
+        <h2>News</h2>
+        <ul class="news-list">
+          <li class="news-item">
+            <div class="news-date">Jul 2026</div>
+            <div>
+              <p class="news-title">Attended the <a href="https://www.ecp22edinburgh.org/" target="_blank" rel="noopener">22nd European Conference on Personality (ECP22)</a></p>
+              <p class="news-place">Edinburgh, Scotland · 21–24 July 2026</p>
+            </div>
+          </li>
+          <li class="news-item">
+            <div class="news-date">Jul 2026</div>
+            <div>
+              <p class="news-title">Attended the <a href="https://iarrconferences.com/" target="_blank" rel="noopener">International Association for Relationship Research Conference</a></p>
+              <p class="news-place">Glasgow, Scotland · 8–12 July 2026</p>
+            </div>
+          </li>
+          <li class="news-item">
+            <div class="news-date">Jul 2025</div>
+            <div>
+              <p class="news-title">Attended the <a href="https://www.issid.org/conference-details/2025---vienna-%2F-austria" target="_blank" rel="noopener">International Society for the Study of Individual Differences Conference</a></p>
+              <p class="news-place">Vienna, Austria · 14–18 July 2025</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -368,16 +482,16 @@
               <a class="doi" href="https://doi.org/10.1177/08902070251383101" target="_blank" rel="noopener">DOI ↗</a>
             </article>
           </div>
- 
+
           <div class="year-group">
-          <h3 class="year">2024</h3>
-          <article class="publication">
+            <h3 class="year">2024</h3>
+            <article class="publication">
               <p class="pub-title">Smartphone addiction and internalized and externalized aggression among adolescents: Evidence from longitudinal study and weekly diary study</p>
-            <p class="pub-meta"><strong>Deng, X.</strong>, Li, X., &amp; Xiang, Y. <em>Computers in Human Behavior, 150</em>, 107988.</p>
-            <a class="doi" href="https://doi.org/10.1016/j.chb.2023.107988" target="_blank" rel="noopener">DOI ↗</a>
-          </article>
-        </div>
-          
+              <p class="pub-meta"><strong>Deng, X.</strong>, Li, X., &amp; Xiang, Y. <em>Computers in Human Behavior, 150</em>, 107988.</p>
+              <a class="doi" href="https://doi.org/10.1016/j.chb.2023.107988" target="_blank" rel="noopener">DOI ↗</a>
+            </article>
+          </div>
+
           <div class="year-group">
             <h3 class="year">2023</h3>
             <article class="publication">
